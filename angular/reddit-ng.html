@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="reddit.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <h2>Random Subreddit</h2>
+    <div ng-controller="RedditCtrl">
+      <span>{{subreddit.title}}</span>
+      <span> {{stories.length}} Stories </span>
+      <ul class="unstyled">
+        <li ng-repeat="story in stories">
+          <input type="checkbox" ng-model="event">
+          <span >{{story.ups}} | {{story.downs}} <a href="{{story.url}}">{{story.title}}</a></span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+function RedditCtrl($scope) { $scope.subreddit = 
+{
+  "description": "[Report A Post](http://www.reddit.com/message/compose?to=%2Fr%2Ffacepalm&amp;?button \"Message the moderators\")\n************\nThis is a subreddit for anything that makes you facepalm, this includes, conspiratards, things from facebook, youtube comments, twitter posts and comments, instagram, and anywhere else!\n Please read the rules before posting. Also be sure to keep up with us on [Twitter](http://www.twitter.com/rslashfacepalm) and [Facebook](http://www.facebook.com/facepalmsub)!\n\n----------\n\n#Current Filter: [](/current?filter)\n\n*********\n\n##[](http://fb.reddit.com/r/facepalm?filter \"Just Facebook\")[](http://tw.reddit.com/r/facepalm?filter \"Just Twitter\")[](http://rd.reddit.com/r/facepalm?filter \"Just Reddit\")[](http://nw.reddit.com/r/facepalm?filter \"Just News\")[](http://yt.reddit.com/r/facepalm?filter \"Just YouTube\")[](http://pc.reddit.com/r/facepalm?filter \"Just Pictures\")[](http://gp.reddit.com/r/facepalm?filter \"Just Google\")[](http://tu.reddit.com/r/facepalm?filter \"Just Tumblr\")[](http://az.reddit.com/r/facepalm?filter \"Just Amazon\")[](http://ot.reddit.com/r/facepalm?filter)\n***********\n[Remove Filters](http://www.reddit.com/r/facepalm?button)\n\n[Gallery View](http://reddpics.com/r/facepalm?button)\n\n[Chrome Extension](https://chrome.google.com/webstore/detail/status-snapper/ecngjgfoaccambehbkdndfkinjfgcajj?button)\n\n---------\n\n\n#Rules:\n\n* **Any and all personal info must be 100% blacked out**. This includes but is not limited to: usernames, page names, faces, **profile pictures**, location data of any kind, and first and/or last names. Failure to do so in a submission or a comment will result in a removal.\n \n* Do not post direct links to profiles, threads, or off-site material containing personal info. You will be banned and reported to the admins for this infraction.\n \n* **Do not ask for personal information of any kind nor for links to the facepalm sources.**\n \n* When removing personal information, completely cover them with opaque/solid color. Do not blur, \"pixelate\", or partially cover them.\n \n* **Witch hunts will not be tolerated.**\n \n* Racist, misogynistic, homophobic, transphobic, or otherwise abusive content will be removed and the commenter/poster may be banned. Please be civil, and **use [reddiquette](http://www.reddit.com/help/reddiquette) as a guideline.**\n \n* The mods reserve the right to remove posts subjectively deemed \"not a facepalm.\" For example, obvious jokes and sarcasm are not facepalms.\n \n* **Do not post misused memes or posts asking for likes/shares/comments  -- also known as \"like/share/comment whoring\"**\n \n* Do not post overused facepalms like \"l33t speak\", \"excessive slang usage\", \"internet speak\", \"my phone stopped working -- *sent from my mobile device*\", nor the alike;\n \n* **Grammar/spelling errors are not facepalms.** Do not make posts centered on grammar/spelling errors. (But if a grammar/spelling error leads to a facepalm-y situation/pun, you may post them.)\n \n* No posts featuring age. We get it. Kids are naive, elders have trouble with computers; it got old after the first thousand times of hearing about it, and bullying kids and elders is *never* acceptable here.\n \n**Things that *will* get you banned:**\n\n* Spamming\n* Doxxing of any kind\n* Racial Slurs\n* In some cases, user abuse\n* Breaking the rules stated above\n* Giving out any personal information\n\n**If you do get banned:**\n\n* Send a *polite* modmail asking for specifics about your ban. It might be temporary, in which case you should take it as a learning experience and review our rules.\n\n****\n\n\n#Subreddit Advertising:\n* /r/thisisawasteoftime ***NEW***\n* /r/NoX\n* /r/xkcdcomic  \n* /r/awwducational\n* /r/ImaginaryBattlefields\n* /r/ImaginaryCityscapes\n* /r/ImaginaryDemons\n* /r/ImaginaryVehicles\n* /r/ImaginaryWeaponry\n* /r/NatureGifs \n* /r/sloths\n* /r/conspiratard\n* /r/animalsbeingderps\n* /r/PlagiarizeMe\n* /r/EverydayArt ***NEW***\n* /r/versus",
+  "url": "/r/facepalm/",
+  "created": 1251452990,
+  "subscribers": 260556,
+  "title": "A showcase of inexplicable stupidity",
+  "name": "facepalm"
+}
+;
+$scope.stories = [
+{
+  "downs": 3858,
+  "ups": 6286,
+  "url": "http://imgur.com/2Cz8N3z",
+  "title": "Close enough?"
+},
+{
+  "downs": 1102,
+  "ups": 2810,
+  "url": "http://imgur.com/TMYdQE1",
+  "title": "History teachers are important."
+},
+{
+  "downs": 268,
+  "ups": 920,
+  "url": "http://imgur.com/v4M1OT4",
+  "title": "...seriously wtf america this place is turning into shit......"
+},
+{
+  "downs": 39,
+  "ups": 197,
+  "url": "http://imgur.com/icg9Ug4",
+  "title": "Facebook, beware. \"Hackers\" now use the advanced technology of copy and paste to....\"say and post things.\""
+},
+{
+  "downs": 71,
+  "ups": 254,
+  "url": "http://i.imgur.com/EtjqmZ4.png",
+  "title": "the American Populous"
+},
+{
+  "downs": 11,
+  "ups": 69,
+  "url": "http://imgur.com/TLzxY1m",
+  "title": "Blackouts in England are sending people back to the steam-punk ages."
+},
+{
+  "downs": 32,
+  "ups": 125,
+  "url": "http://imgur.com/sKs7rRZ",
+  "title": "If you're going to talk shit about a band, you should probably know their most popular song"
+},
+{
+  "downs": 1733,
+  "ups": 3745,
+  "url": "http://i.imgur.com/x1hNtfi.png",
+  "title": "Friend dropped this on us the other day. He was dead serious."
+},
+{
+  "downs": 6,
+  "ups": 39,
+  "url": "http://imgur.com/vloOePx.jpg",
+  "title": "That turned awkward fast. [Facebook]"
+},
+{
+  "downs": 14,
+  "ups": 56,
+  "url": "http://imgur.com/O2UgqJ1",
+  "title": "We really missed you..........."
+},
+{
+  "downs": 2,
+  "ups": 10,
+  "url": "http://imgur.com/DswDlvM",
+  "title": "Searched \"flappy bird\" on eBay. Was not disappointed."
+},
+{
+  "downs": 6,
+  "ups": 36,
+  "url": "http://i.imgur.com/fCA6sdY.jpg",
+  "title": "I can only imagine the Mother's Day card."
+},
+{
+  "downs": 8,
+  "ups": 39,
+  "url": "http://i.imgur.com/yIVQ7KV.png",
+  "title": "I think he is trying to communicate."
+},
+{
+  "downs": 17,
+  "ups": 55,
+  "url": "http://imgur.com/BOEmxYl",
+  "title": "Who the hell approved this headline?"
+},
+{
+  "downs": 4,
+  "ups": 13,
+  "url": "http://i.imgur.com/j626PIA.jpg",
+  "title": "Much Subway, many bad."
+},
+{
+  "downs": 1,
+  "ups": 12,
+  "url": "http://imgur.com/rRSuwV7",
+  "title": "He got expelled earlier this year but he seems to be doing just fine and dandy"
+},
+{
+  "downs": 3,
+  "ups": 22,
+  "url": "http://imgur.com/8lMAFYW",
+  "title": "Very unfortunately placed ad for this t-shirt company."
+},
+{
+  "downs": 0,
+  "ups": 3,
+  "url": "http://i.imgur.com/EKIexle.jpg",
+  "title": "Ok then."
+},
+{
+  "downs": 4,
+  "ups": 11,
+  "url": "http://imgur.com/7r5UyyI",
+  "title": "Checkmate, SmartWater"
+},
+{
+  "downs": 3,
+  "ups": 6,
+  "url": "http://imgur.com/XNXP7JW",
+  "title": "The irony is strong with this one."
+},
+{
+  "downs": 1,
+  "ups": 4,
+  "url": "http://i.imgur.com/jZ9JOMk.png",
+  "title": "So I was reading some comments when..."
+},
+{
+  "downs": 1,
+  "ups": 22,
+  "url": "http://i.imgur.com/zDUSXU1.jpg",
+  "title": "The man has a point."
+},
+{
+  "downs": 17,
+  "ups": 81,
+  "url": "http://imgur.com/ZI081z9",
+  "title": "Friend gets fooled by the usual \"McDonalds is made of people\" post on a satirical website. It's one thing to post it, and it's another thing to defend yourself about it."
+},
+{
+  "downs": 78,
+  "ups": 384,
+  "url": "http://i.imgur.com/Fu7Alof.png",
+  "title": "Oh, Flappy Bird..."
+},
+{
+  "downs": 4,
+  "ups": 16,
+  "url": "http://i.imgur.com/zR53ujH.png?1",
+  "title": "Was browsing IMDB after watching Ender's Game and found this gem."
+},
+];}

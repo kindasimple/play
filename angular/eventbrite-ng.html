@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="eventbrite.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <h2>Eventbrite</h2>
+    <div ng-controller="EventCtrl">
+      <span> {{events.length}} Events </span>
+      <ul class="unstyled">
+        <li ng-repeat="event in events">
+          <input type="checkbox" ng-model="event">
+          <span class="done-{{event.category}}">{{event.title}}</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
