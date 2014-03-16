@@ -23,6 +23,20 @@ class ArithmeticTestCase(BaseArithmeticTestCase):
 
 		self.assertTrue(self.math.Equals(self.math.Subtract(minuend, subtrahend), difference), 'incorrect result')
 
+	def testMultiply(self):
+		multiplicand = Number(2)
+		multiplier = Number(4)
+		product = Number(2*4)
+
+		self.assertTrue(self.math.Equals(self.math.Multiply(multiplicand, multiplier), product), 'incorrect result')
+
+	def testDivide(self):
+		dividend = Number(8)
+		divisor = Number(4)
+		quotient = Number(8/4)
+
+		self.assertTrue(self.math.Equals(self.math.Divide(dividend, divisor), quotient), 'incorrect result')
+
 class ArithmeticTestSuite(unittest.TestSuite):
 	def __init__(self):
 		unittest.TestSuite.__init__(self, map(ArithmeticTestCase, ("testAdd","testSubtract")))

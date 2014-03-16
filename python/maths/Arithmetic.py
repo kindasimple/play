@@ -14,3 +14,9 @@ operations in methods"""
 
 	def Equals(self, left: Number, right: Number):
 		return left.value == right.value 
+
+	def Divide(self, dividend: Number, divisor: Number):
+		return Number(dividend.value / divisor.value)
+
+	def Multiply(self, multiplicand: Number, multiplier: Number):
+		return Number(multiplicand.value * multiplier.value)
