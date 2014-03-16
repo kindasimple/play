@@ -37,9 +37,16 @@ class ArithmeticTestCase(BaseArithmeticTestCase):
 
 		self.assertTrue(self.math.Equals(self.math.Divide(dividend, divisor), quotient), 'incorrect result')
 
-class ArithmeticTestSuite(unittest.TestSuite):
-	def __init__(self):
-		unittest.TestSuite.__init__(self, map(ArithmeticTestCase, ("testAdd","testSubtract")))
+## test configuration
+#######################
+
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTest(ArithmeticTestCase)
+    return suite
 
 if __name__ == "__main__":
-	unittest.main()
+	#unittest.main()
+	runner = unittest.TextTestRunner()
+	test_suite = suite()
+	runner.run(test_suite)
