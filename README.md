@@ -3,8 +3,22 @@ play
 
 Small scripts and apps to practice new languages
 
-**owner:** Evan White  
-**email:** kindasimple@gmail.com
+
+* Scala
+* R
+* Javascript
+* Bash
+
+***
+
+###Scala
+
+**Play**
+
+
+This application was created following the tutorial for creating a [First Play Application](http://www.playframework.com/documentation/2.2.2/ScalaTodoList). It is a simple todo list.
+
+
 
 ###R
 
@@ -29,9 +43,11 @@ harvesting data from [usgs data feed](http://earthquake.usgs.gov/earthquakes/fee
 
 Using twitter search [(twitteR)](http://cran.r-project.org/web/packages/twitteR/index.html) and streaming api [(streamR)](http://cran.r-project.org/web/packages/streamR/) from within R to create word clouds and other interesting visualizations using community packages
 
+
 ###angular.js
 
 Generating controllers from various data feeds, and using angular to display the data
+
 
 ###scripts
 
