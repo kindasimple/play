@@ -1,24 +1,58 @@
-import unittest
+import unittest, random
 from maths import Number, Arithmetic
-from sort import Quicksort
+from sort import Sorting
 
 class BaseSortTestCase(unittest.TestCase):
   def setUp(self):
     self.math = Arithmetic()
-    self.qs = Quicksort()
+    self.sort = Sorting()
+    self.sorted = self.generateSortedList(10)
+    self.shuffled = self.generateShuffledList(10)
 
   def tearDown(self):
-    self.qs = None
+    self.sort = None
     self.math = None
+    self.sorted = None
+    self.shuffled = None
 
-class QuicksortTestCase(BaseSortTestCase):
+  def generateSortedList(self, length):
+    items = list(range(1, 1 + length + 1))
+    numbers = []
+    for item in items:
+      numbers.append(Number(item))
+    return numbers
+
+  def generateShuffledList(self, length):
+    items = list(range(1, 1 + length + 1))
+    random.shuffle(items)
+    numbers = []
+    for item in items:
+      numbers.append(Number(item))
+    return numbers
+
+  def checkSortedList(self, original, sorted):
+    for idx, item in enumerate(sorted):
+      if not self.math.Equals(item, original[idx]):
+        return False
+    return True
+
+class SortingTestCase(BaseSortTestCase):
   def testQuicksort(self):
-    unsorted = [Number(2), Number(1), Number(5)]
-    sorted = self.qs.Sort(unsorted)
+    sorted = self.sort.Quicksort(self.shuffled)
+    self.assertTrue(self.checkSortedList(self.sorted, sorted), 'incorrect result')
 
-    self.assertTrue(self.math.Equals(Number(1), sorted[0]), 'incorrect result')
-    self.assertTrue(self.math.Equals(Number(2), sorted[1]), 'incorrect result')
-    self.assertTrue(self.math.Equals(Number(5), sorted[2]), 'incorrect result')
+  def testMergesort(self):
+    sorted = self.sort.Mergesort(self.shuffled)
+    self.assertTrue(self.checkSortedList(self.sorted, sorted), 'incorrect result')
+
+
+  def testHeapsortSiftDown(self):
+    sorted = self.sort.HeapsortSiftDown(list(self.shuffled))
+    self.assertTrue(self.checkSortedList(self.sorted, sorted), 'incorrect result')
+
+  def testHeapsortSiftUp(self):
+    sorted = self.sort.HeapsortSiftUp(list(self.shuffled))
+    self.assertTrue(self.checkSortedList(self.sorted, sorted), 'incorrect result')
 
 ## test configuration
 #######################
