@@ -15,7 +15,7 @@ class ArithmeticTestCase(BaseArithmeticTestCase):
 		sum = Number(7)
 
 		self.assertTrue(self.math.Equals(self.math.Add(addend1, addend2), sum), 'incorrect result')
-	
+
 	def testSubtract(self):
 		minuend = Number(5)
 		subtrahend = Number(2)
@@ -36,6 +36,15 @@ class ArithmeticTestCase(BaseArithmeticTestCase):
 		quotient = Number(8/4)
 
 		self.assertTrue(self.math.Equals(self.math.Divide(dividend, divisor), quotient), 'incorrect result')
+
+	def testLessThan(self):
+		first = Number(1)
+		second = Number(2)
+		lessThanResult = 1 < 2
+		greaterThanResult = 1 > 2
+
+		self.assertTrue(self.math.LessThan(first, second) == lessThanResult, 'incorrect result')
+		self.assertTrue(self.math.GreaterThan(first, second) == greaterThanResult, 'incorrect result')
 
 ## test configuration
 #######################
