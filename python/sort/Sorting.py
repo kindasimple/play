@@ -9,6 +9,23 @@ class Sorting:
   """Class that performs sorting operations using the custom Number
   objects and arithmatic class"""
 
+  def InsertionSort(self, items) :
+    """pseudocode from: http://en.wikipedia.org/wiki/Insertion_sort
+    for i ← 1 to length(A)
+    x ← A[i]
+    j ← i
+    while j > 0 and A[j-1] > x
+        A[j] ← A[j-1]
+        j ← j - 1
+    A[j] ← x"""
+    for i, x in enumerate(items) :
+      j = i
+      while j > 0 and Arithmetic().GreaterThan(items[j-1], x) :
+        items[j] = items[j-1]
+        j -= 1
+      items[j] = x
+    return items
+
   def Mergesort(self, unsorted):
     """Perform a mergesort comparison sort:
     pseudocode from http://en.wikipedia.org/wiki/Merge_sort

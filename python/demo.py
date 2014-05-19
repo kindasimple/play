@@ -12,5 +12,59 @@ print("Equality Tests")
 print("2 == 2 is %s" % Arithmetic().Equals(Number(2), Number(2)))
 print("1 == 2 is %s" % Arithmetic().Equals(Number(1), Number(2)))
 
-print("Get some projects from Github")
-from github_demo import github_list_repo
+from search import *
+
+def print_graph_details(algorithm):
+  print("Vertices: ")
+  for n in algorithm.nodes:
+    v = algorithm.nodes[n]
+    print("{}: {} ({},{})".format(v.id, v.name, v.position.lat, v.position.lon))
+  print("Edges: ")
+  for a in algorithm.graph:
+    e = algorithm.graph[a]
+    print("[{}] {} ".format(algorithm.nodes[a].id, algorithm.nodes[a].name), e)
+
+
+
+import time
+try_again = True
+while try_again:
+  try_again = False
+  
+  algorithm = Backtrack()
+  print_graph_details(algorithm)
+  start = list(algorithm.nodes)[0]
+  finish = list(algorithm.nodes)[-1]
+
+  start_time = time.clock()
+  try:
+    print("Solution via Backtracking: {result} [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
+    algorithm = Dijkstra(algorithm.nodes, algorithm.graph)
+    print("Solution via Dijkstra: {result} [{elapsed}]".format(result = algorithm.search(start, finish)[1], elapsed = time.clock() - start_time))
+  except SearchError:
+    print("No solution to random data set. Retrying")
+    try_again = True
+
+var = input("Run Search Speed Test: [y/n]")
+while var is not 'y' and var is not 'n':
+  var = input("Run Search Speed Test: [y/n]")
+
+nodes = 100
+while(nodes < 1000 and var is 'y'):
+  print("Searching a Graph with {} nodes".format(nodes))
+  algorithm = Backtrack()
+  algorithm.generate_graph(nodes, .5)
+  print("")
+
+  start = list(algorithm.nodes)[0]
+  finish = list(algorithm.nodes)[-1]
+  print("Start: {}, Finish: {}".format(algorithm.nodes[start], algorithm.nodes[finish]))
+
+  print("Solution via Backtracking:  [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
+  start_time = time.clock()
+  algorithm = Dijkstra(algorithm.nodes, algorithm.graph)
+  print("Solution via Dijkstra:  [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
+  nodes = math.floor(nodes * 1.1)
+
+#print("Get some projects from Github")
+#from github_demo import github_list_repo

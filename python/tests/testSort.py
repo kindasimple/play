@@ -54,6 +54,10 @@ class SortingTestCase(BaseSortTestCase):
     sorted = self.sort.HeapsortSiftUp(list(self.shuffled))
     self.assertTrue(self.checkSortedList(self.sorted, sorted), 'incorrect result')
 
+  def testInsertionSort(self):
+    sorted = self.sort.InsertionSort(list(self.shuffled))
+    self.assertTrue(self.checkSortedList(self.sorted, sorted), 'incorrect result')
+
 ## test configuration
 #######################
 
