@@ -30,17 +30,21 @@ import time
 try_again = True
 while try_again:
   try_again = False
-  
+
   algorithm = Backtrack()
   print_graph_details(algorithm)
   start = list(algorithm.nodes)[0]
   finish = list(algorithm.nodes)[-1]
 
-  start_time = time.clock()
   try:
+    start_time = time.clock()
     print("Solution via Backtracking: {result} [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
     algorithm = Dijkstra(algorithm.nodes, algorithm.graph)
+    start_time = time.clock()
     print("Solution via Dijkstra: {result} [{elapsed}]".format(result = algorithm.search(start, finish)[1], elapsed = time.clock() - start_time))
+    algorithm = AStar(algorithm.nodes, algorithm.graph)
+    start_time = time.clock()
+    print("Solution via A*: {result} [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
   except SearchError:
     print("No solution to random data set. Retrying")
     try_again = True
@@ -53,17 +57,25 @@ nodes = 100
 while(nodes < 1000 and var is 'y'):
   print("Searching a Graph with {} nodes".format(nodes))
   algorithm = Backtrack()
-  algorithm.generate_graph(nodes, .5)
-  print("")
+  connectivity = 1 / (2 + math.sqrt((nodes - 100)))
+  algorithm.generate_graph(nodes, connectivity)
+  print("connectivity ", connectivity)
 
   start = list(algorithm.nodes)[0]
   finish = list(algorithm.nodes)[-1]
+
   print("Start: {}, Finish: {}".format(algorithm.nodes[start], algorithm.nodes[finish]))
 
-  print("Solution via Backtracking:  [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
   start_time = time.clock()
+  print("Solution via Backtracking: {result}  [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
   algorithm = Dijkstra(algorithm.nodes, algorithm.graph)
-  print("Solution via Dijkstra:  [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
+
+  start_time = time.clock()
+  print("Solution via Dijkstra: {result}  [{elapsed}]".format(result = algorithm.search(start, finish)[1], elapsed = time.clock() - start_time))
+
+  start_time = time.clock()
+  algorithm = AStar(algorithm.nodes, algorithm.graph)
+  print("Solution via A*: {result} [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
   nodes = math.floor(nodes * 1.1)
 
 #print("Get some projects from Github")
