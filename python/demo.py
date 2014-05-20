@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from maths import Arithmetic, Number
+from search import *
 
 print("Do some arithmetic")
 print("2 + 3 = %d" % Arithmetic().Add(Number(2), Number(3)).value)
@@ -12,7 +13,6 @@ print("Equality Tests")
 print("2 == 2 is %s" % Arithmetic().Equals(Number(2), Number(2)))
 print("1 == 2 is %s" % Arithmetic().Equals(Number(1), Number(2)))
 
-from search import *
 
 def print_graph_details(algorithm):
   print("Vertices: ")
@@ -27,6 +27,7 @@ def print_graph_details(algorithm):
 
 
 import time
+
 try_again = True
 while try_again:
   try_again = False
@@ -77,6 +78,51 @@ while(nodes < 1000 and var is 'y'):
   algorithm = AStar(algorithm.nodes, algorithm.graph)
   print("Solution via A*: {result} [{elapsed}]".format(result = algorithm.search(start, finish), elapsed = time.clock() - start_time))
   nodes = math.floor(nodes * 1.1)
+
+algorithm = AStar()
+algorithm.generate_graph(100, .1)
+start = list(algorithm.nodes)[0]
+finish = list(algorithm.nodes)[-1]
+
+path_set = {}
+path_nodes = []
+
+## Solve
+path = algorithm.search(start, finish)
+for v in path:
+  path_nodes.append(algorithm.nodes[v])
+
+## Add Result
+path_set["AStar"] = path_nodes
+
+## Solve
+algorithm = Dijkstra(algorithm.nodes, algorithm.graph)
+path = algorithm.search(start, finish)[1]
+
+#Add result
+path_nodes = []
+for v in path:
+  path_nodes.append(algorithm.nodes[v])
+
+path_set["Dijkstra"] = path_nodes
+
+## Solve
+algorithm = Backtrack(algorithm.nodes, algorithm.graph)
+path = algorithm.search(start, finish)
+
+#Add result
+path_nodes = []
+for v in path:
+  path_nodes.append(algorithm.nodes[v])
+
+#path_set["Backtrack"] = path_nodes
+
+output = CSVFile('search.csv')
+output.write(list(algorithm.nodes.values()), path_set)
+
+output = KMLFile('search.kml')
+output.write(list(algorithm.nodes.values()), path_set)
+
 
 #print("Get some projects from Github")
 #from github_demo import github_list_repo
